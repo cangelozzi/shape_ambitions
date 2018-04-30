@@ -1,0 +1,622 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+/*basic reset*/
+
+/*browsers have built in values for elements so we'll reset a few things to zero, you can add to this or remove items as needed*/
+
+div,
+p,
+body,
+header,
+footer,
+section,
+article,
+nav,
+ul {
+  margin: 0;
+  padding: 0;
+  color: #243752;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+/* link style */
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+/* basic form style */
+
+input,
+textarea {
+  display: block;
+}
+
+/*html selectors*/
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  background: #243752;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #243752 0%, #0d80b2 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #243752 0%, #0d80b2 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #243752 0%, #0d80b2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/*a:link is for not visited(standard unclicked link), 
+a:visited is for visited, and just a applies to both.*/
+
+/*a will also style anchor links*/
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #243752;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #243752;
+}
+
+/*hide elements from browser but show for doc outline*/
+
+.hidden {
+  display: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ANIMATIONS end*/
+
+/* --------  */
+
+/* HOME Page */
+
+/* --------- */
+
+#topHeader {
+  background-color: #243752;
+}
+
+.signInNav {
+  padding: 5px 0px;
+  width: 960px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.signInNav a {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 0.8em;
+}
+
+.signInNav li:last-child {
+  margin-right: 20px;
+}
+
+/*Site Container*/
+
+/*This is essentially a box that we place the whole site in.  
+We center the box using margin 0 auto and give it a fixed width of 920 + 20px + 20px (960px) so it fits on 1024x768 screens.*/
+
+#siteContainer {
+  margin: 0 auto;
+  width: 920px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: url(../images/background.jpg) no-repeat center;
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#mainHeader {
+  margin-bottom: 80px;
+  overflow: hidden;
+  /*fixes colapsing parent*/
+  /*http://coding.smashingmagazine.com/2009/10/19/the-mystery-of-css-float-property/*/
+  position: relative;
+}
+
+#logo {
+  float: left;
+  margin-top: 40px;
+}
+
+#logo img {
+  width: 200px;
+}
+
+#mainNav {
+  float: right;
+  width: 500px;
+  margin-top: 80px;
+  font-size: 1.4em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+#mainNav a {
+  padding: 0px 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.4s ease-in;
+}
+
+#mainNav a:hover {
+  border-bottom: 2px solid #243752;
+}
+
+.selected {
+  border-bottom: 2px solid #243752;
+}
+
+#contentAreaBig,
+#contentAreaBigServices {
+  margin-bottom: 80px;
+  overflow: hidden;
+  height: 250px;
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.tagline {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+}
+
+.tagline p {
+  color: #F2CE45;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tagline p:last-child {
+  margin-left: 200px;
+  margin-top: 10px;
+}
+
+.tagline span {
+  font-size: 2em;
+  font-weight: 600;
+  font-style: italic;
+  animation: fadeIn 3s;
+}
+
+#details,
+#detailsServices {
+  margin-top: 40px;
+  overflow: hidden;
+  /*fixes colapsing parent*/
+  padding-bottom: 20px;
+}
+
+#details p,
+#detailsServices p {
+  font-size: 1.6em;
+  line-height: 1.24em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+#details img,
+#detailsServices img {
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  /* Position Absolute is used to avoid the box-shadow to be cut off after the element has been floated to left */
+}
+
+#details a {
+  font-size: 1.9em;
+  position: absolute;
+  color: #fff;
+  z-index: 99;
+  margin: 155px 20px;
+  letter-spacing: 1px;
+}
+
+#details a:hover {
+  transform: scale(1.1);
+  color: #F2CE45;
+}
+
+.services,
+.plans {
+  width: 410px;
+  height: 300px;
+  float: left;
+}
+
+.services {
+  margin-right: 100px;
+}
+
+#mainFooter {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+  clear: both;
+}
+
+#footerNav {
+  float: left;
+  width: 500px;
+}
+
+#footerNav img {
+  width: 90px;
+  float: left;
+  margin-top: 8px;
+}
+
+#footerNav ul {
+  float: left;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+
+#footerNav a {
+  font-size: 1.4em;
+  padding: 0px 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.4s ease-in;
+}
+
+#footerNav a:hover {
+  border-bottom: 2px solid #243752;
+}
+
+.mailingList label {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#socialMedia {
+  position: absolute;
+  right: 0;
+}
+
+#socialMedia ul {
+  text-align: right;
+  margin: 10px 0px;
+}
+
+#socialMedia img {
+  width: 30px;
+  margin-left: 5px;
+}
+
+#copyRight {
+  float: right;
+  width: 310px;
+  margin-top: 70px;
+  font-size: 0.8em;
+}
+
+#copyRight p {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+/* ------------  */
+
+/* SERVICES Page */
+
+/* ------------  */
+
+.student,
+.business,
+.resources {
+  width: 280px;
+  float: left;
+}
+
+.student,
+.business {
+  margin-right: 40px;
+}
+
+.student h2,
+.business h2,
+.resources h2 {
+  text-transform: uppercase;
+}
+
+/* ---------- */
+
+/* PLANS Page */
+
+/* ---------- */
+
+#plansList {
+  margin-top: 40px;
+  overflow: hidden;
+  /*fixes colapsing parent*/
+  padding-bottom: 40px;
+}
+
+#studentPlan h2,
+#businessPlan h2 {
+  color: #F2CE45;
+  text-transform: uppercase;
+  border-bottom: 2px solid #F2CE45;
+  font-size: 3em;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 20%;
+}
+
+#plansList h3 {
+  color: #F2CE45;
+  text-align: center;
+}
+
+#plansList span {
+  font-size: 3em;
+  font-weight: bold;
+  animation: fadeIn 2.5s;
+}
+
+
+#plansList ul {
+  margin-top: 40px;
+}
+
+#plansList li {
+  list-style: none;
+  color: #fff;
+  display: block;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.getStarted {
+  text-transform: uppercase;
+  background-color: #0d80b2;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 280px;
+  height: 40px;
+  margin-left: 20%;
+  margin-top: 60px;
+  border: none;
+}
+
+#studentPlan,
+#businessPlan {
+  width: 440px;
+  height: 630px;
+  background-color: #243752;
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#studentPlan {
+  float: left;
+
+  position: absolute;
+  /* Position Absolute is used to avoid the box-shadow to be cut off after the element has been floated to left */
+}
+
+#businessPlan {
+  float: right;
+}
+
+/* ------------  */
+
+/* ABOUT US Page */
+
+/* ------------  */
+
+#about h2 {
+  text-transform: uppercase;
+  font-size: 2.45em;
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+
+#about img {
+  float: right;
+  margin-left: 20px;
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#testimonials {
+  clear: both;
+  margin-top: 100px;
+}
+
+#testimonials p {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.8em;
+}
+
+#testimonials h2,
+#testimonials h3 {
+  color: #0d80b2;
+  letter-spacing: 1px;
+}
+
+#testimonials h2 {
+  margin-bottom: 0px;
+}
+
+#testimonials h3 {
+  margin-top: 5px;
+}
+
+#testimonials img {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 80px;
+}
+
+#testimonial1,
+#testimonial2 {
+  float: left;
+  width: 410px;
+  margin-bottom: 40px;
+}
+
+#testimonial1 {
+  margin-right: 100px;
+  animation: slideInLeft 1s;
+}
+
+#testimonial2 {
+  animation: slideInRight 1s;
+}
+
+#testimonial1 h2 {
+  margin-top: 40px;
+}
+
+#testimonial1 img {
+  margin-top: 30px;
+}
+
+#testimonial2 img {
+  margin-top: 5px;
+}
+
+/* --------------- */
+
+/* CONTACT US Page */
+
+/* --------------- */
+
+#contact {
+  margin-top: 40px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+#contact h3 {
+  color: #0d80b2;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#contactMain,
+#mapArea {
+  width: 440px;
+  height: 630px;
+}
+
+#contactMain {
+  float: left;
+  width: 440px;
+}
+
+#contactMain label {
+  font-size: 1.5em;
+}
+
+#contactMain input,
+#contactMain textarea {
+  margin-bottom: 20px;
+}
+
+#mapArea {
+  float: right;
+  width: 440px;
+}
+
+#mapArea li {
+  display: block;
+  font-size: 1.4em;
+}
+
+#mapArea ul {
+  margin-bottom: 20px;
+}
+
+#mapArea iframe {
+  -webkit-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 9px 5px 0px rgba(0, 0, 0, 0.5);
+
+  /* Position Absolute and Height hardcoded to avoid the box-shadow to be cut off after the element has been floated to right */
+  position: absolute;
+  height: 520px;
+}
+
+#submitQuery {
+  text-transform: uppercase;
+  background-color: #0d80b2;
+  color: #fff;
+  font-size: 1.5em;
+  width: 280px;
+  height: 40px;
+  margin-top: 120px;
+  border: none;
+}
